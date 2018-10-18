@@ -106,6 +106,13 @@ img.fit {
   width: 100%;
 }
 
+.responsive {
+    width: 100%;
+    height: auto;
+	max-height: 100%;
+	padding-right: 100px;
+}
+
 .text.left {
   text-align: left !important;
 }
