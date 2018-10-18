@@ -13,8 +13,17 @@
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <style>
-        body { margin:0; padding:0; }
-        #map { position:absolute; top:0; bottom:0; width:100%; }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
     </style>
 
     <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" />
@@ -94,46 +103,118 @@
                 </div>
             </nav>
             <div class="content">
-              <div class="container-fluid">
-                  <div class="row">
-                      <div class="col-md-12">
-                          <div class="card">
-                            <div class="card-header" data-background-color="purple">
-                                  <h4 class="title">List of clinics</h4>
-                              </div>
-                              <div class="card-content table-responsive">
-                                  <table class="table">
-                                      <thead class="text-primary">
-                                        <th >Address</th>
-                                        <th >Email</th>
-                                        <th >Opening Hours</th>
-                                        <th >Organization Name</th>
-                                        <th >Phone</th>
-                                        <th >Region</th>
-                                        <th >Speciality</th>
-                                        <th >Website</th>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header" data-background-color="purple">
+                                    <h4 class="title">List of clinics</h4>
+                                </div>
+                                <div class="card-content table-responsive">
+                                    <table class="table">
+                                        <thead class="text-primary">
+                                            <th>Address</th>
+                                            <th>Email</th>
+                                            <th>Opening Hours</th>
+                                            <th>Organization Name</th>
+                                            <th>Phone</th>
+                                            <th>Region</th>
+                                            <th>Speciality</th>
+                                            <th>Website</th>
                                         </thead>
-                                      <tbody id="applications">
-                                      </tbody>
-                                  </table>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
+                                        <tbody id="applications">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div id='map'></div>
         <script>
-        mapboxgl.accessToken = 'pk.eyJ1IjoibGtvcGxrb3AiLCJhIjoiY2psano1c3ExMGhhbDNrcG44a3dieHZibyJ9.xJu9A3zuMcAN5z8W4e4LUg';
-        var map = new mapboxgl.Map({
-            container: 'map', // container id
-            style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
-            center: [-74.50, 40], // starting position [lng, lat]
-            zoom: 9 // starting zoom
-        });
-        
+            mapboxgl.accessToken = 'pk.eyJ1IjoibGtvcGxrb3AiLCJhIjoiY2psano1c3ExMGhhbDNrcG44a3dieHZibyJ9.xJu9A3zuMcAN5z8W4e4LUg';
+            var map = new mapboxgl.Map({
+                container: 'map', // container id
+                style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
+                center: [114.0475061, 22.3531282], // starting position [lng, lat]
+                zoom: 10 // starting zoom
+            });
+
+            map.on('load', function () {
+                map.loadImage('./img/pin.png', function (error, image) {
+                    if (error) throw error;
+                    map.addImage('cat', image);
+                    map.addLayer({
+                        "id": "1",
+                        "type": "symbol",
+                        "source": {
+                            "type": "geojson",
+                            "data": {
+                                "type": "FeatureCollection",
+                                "features": [{
+                                    "type": "Feature",
+                                    "geometry": {
+                                        "type": "Point",
+                                        "coordinates": [114.165295, 22.2488455]
+                                    }
+                                }]
+                            }
+                        },
+                        "layout": {
+                            "icon-image": "cat",
+                            "icon-size": 0.1
+                        }
+                    });
+                    map.addLayer({
+                        "id": "2",
+                        "type": "symbol",
+                        "source": {
+                            "type": "geojson",
+                            "data": {
+                                "type": "FeatureCollection",
+                                "features": [{
+                                    "type": "Feature",
+                                    "geometry": {
+                                        "type": "Point",
+                                        "coordinates": [114.2403903,22.2725365]
+                                    }
+                                }]
+                            }
+                        },
+                        "layout": {
+                            "icon-image": "cat",
+                            "icon-size": 0.1
+                        }
+                    });
+                    map.addLayer({
+                        "id": "3",
+                        "type": "symbol",
+                        "source": {
+                            "type": "geojson",
+                            "data": {
+                                "type": "FeatureCollection",
+                                "features": [{
+                                    "type": "Feature",
+                                    "geometry": {
+                                        "type": "Point",
+                                        "coordinates": [114.1550537, 22.2802574]
+                                    }
+                                }]
+                            }
+                        },
+                        "layout": {
+                            "icon-image": "cat",
+                            "icon-size": 0.1
+                        }
+                    });
+                    
+                });
+            });
+
+
         </script>
 
     </div>
@@ -142,36 +223,36 @@
 
 <script src="/javascripts/jquery-3.2.1.min.js" type="text/javascript"></script>
 <script type="text/javascript">
-let params = new URLSearchParams(document.location.search.substring(1));
-let value = params.get("value");
-mystring = 'http://localhost:5000/allresources?value=' + value
-console.log(mystring);
-$(document).ready(function() {
-  $.get(mystring, function(data) {
-    for (var i = 0; i < data.length; i++) {
-      $('#applications').append(
-        '<tr> <td>' +
-          data[i]['Address'] +
-          '</td><td>' +
-          data[i]['Email'] +
-          '</td><td>' +
-          data[i]['Opening Hours'] +
-          '</td><td>' +
-          data[i]['Organization Name'] +
-          '</td><td>' +
-          data[i]['Phone'] +
-          '</td><td>' +
-          data[i]['Region'] +
-          '</td><td>' +
-          data[i]['Speciality'] +
-          '</td><td>' +
-          data[i]['Website'] +
-          + '</td> </tr>'
-      );
-    }
-  });
+    let params = new URLSearchParams(document.location.search.substring(1));
+    let value = params.get("value");
+    mystring = 'http://localhost:5000/allresources?value=' + value
+    console.log(mystring);
+    $(document).ready(function () {
+        $.get(mystring, function (data) {
+            for (var i = 0; i < data.length; i++) {
+                $('#applications').append(
+                    '<tr> <td>' +
+                    data[i]['Address'] +
+                    '</td><td>' +
+                    data[i]['Email'] +
+                    '</td><td>' +
+                    data[i]['Opening Hours'] +
+                    '</td><td>' +
+                    data[i]['Organization Name'] +
+                    '</td><td>' +
+                    data[i]['Phone'] +
+                    '</td><td>' +
+                    data[i]['Region'] +
+                    '</td><td>' +
+                    data[i]['Speciality'] +
+                    '</td><td>' +
+                    data[i]['Website'] +
+                    + '</td> </tr>'
+                );
+            }
+        });
 
-});
+    });
 </script>
 <script src="/javascripts/bootstrap.min.js" type="text/javascript"></script>
 <script src="/javascripts/material.min.js" type="text/javascript"></script>
@@ -182,4 +263,5 @@ $(document).ready(function() {
 <script src="/javascripts/material-dashboard.js?v=1.2.0"></script>
 <script src="/javascripts/demo.js"></script>
 <script src="/javascripts/graphs.js"></script>
+
 </html>
