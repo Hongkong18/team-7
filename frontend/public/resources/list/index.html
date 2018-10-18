@@ -121,6 +121,8 @@
                                             <th>Region</th>
                                             <th>Speciality</th>
                                             <th>Website</th>
+                                            <th>Location</th>
+                                            <th>Distance</th>
                                         </thead>
                                         <tbody id="applications">
                                         </tbody>
@@ -210,7 +212,7 @@
                             "icon-size": 0.1
                         }
                     });
-                    
+
                 });
             });
 
@@ -247,6 +249,10 @@
                     data[i]['Speciality'] +
                     '</td><td>' +
                     data[i]['Website'] +
+                    '</td><td>' +
+                    data[i]['Location'] +
+                    '</td><td>' +
+                    data[i]['Distance'] +
                     + '</td> </tr>'
                 );
             }

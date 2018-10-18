@@ -12,7 +12,7 @@ def index():
 def allresources():
     value = request.args.get('value')
     print(value)
-    online_users = mongo.db.clinics.find({"Speciality": value})
+    online_users = mongo.db.inventory.find({"Speciality": value})
     myjson = []
     for i in online_users:
         del i['_id']
