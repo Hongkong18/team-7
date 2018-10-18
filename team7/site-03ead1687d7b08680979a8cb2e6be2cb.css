@@ -1,0 +1,660 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 80%;
+  box-sizing: border-box;
+}
+
+body {
+  color: #FF4500;
+  font-family: "Karla", sans-serif;
+  font-size: 1.6rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media screen and (min-width: 960px) {
+  body {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: colfax-web, sans-serif;
+  text-transform: uppercase;
+}
+
+h2 {
+  color: #591F7A;
+  font-size: 3.6rem;
+  line-height: 3.6rem;
+  font-weight: 900;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  color: #591F7A;
+  font-size: 3.6rem;
+  line-height: 3.6rem;
+  font-weight: 400;
+  font-style: italic;
+  text-transform: none;
+}
+
+h4 {
+  color: #9013FE;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  font-weight: 500;
+  font-style: italic;
+}
+
+h5 {
+  color: #591F7A;
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  margin-bottom: 2rem;
+}
+
+p,
+.content {
+  margin-bottom: 2rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: 0.1s linear;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: inherit;
+}
+
+pre {
+  text-align: left;
+}
+
+code {
+  color: #F71B81;
+  font-family: "source-code-pro", monospace;
+}
+
+img {
+  vertical-align: middle;
+}
+
+img.fit {
+  width: 100%;
+}
+
+.text.left {
+  text-align: left !important;
+}
+
+.text.center {
+  text-align: center !important;
+}
+
+.text.right {
+  text-align: right !important;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  max-width: 96rem;
+}
+
+@media screen and (min-width: 960px) {
+  .container {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .container.inline {
+    display: flex;
+  }
+
+  .container.inline > section {
+    margin-right: 3rem;
+  }
+
+  .container.inline > section:last-of-type {
+    margin-right: 0;
+    margin-left: 3rem;
+  }
+}
+
+.deployed {
+  text-align: center;
+  margin-bottom: 8rem;
+}
+
+.deployed img {
+  height: 6rem;
+  margin: 1rem 2rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 2.1rem 4rem 2rem;
+  color: white !important;
+  font-family: colfax-web, sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  background-image: linear-gradient(90deg,  #DA7BEA 0%, #6155CE  100%);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+  outline: none;
+  -webkit-appearance: none;
+  transition: none;
+}
+
+.button:hover {
+  background-image: linear-gradient(90deg, #DA7BEA 0%, #6155CE  100%);
+  text-decoration: none;
+}
+
+.button.purple {
+  background-image: linear-gradient(45deg, #6155CE 0%, #DA7BEA 100%);
+}
+
+.button.purple:hover {
+  background-image: linear-gradient(45deg, #6155CE 0%, #6155CE 100%);
+}
+
+#header {
+  padding: 0 2rem;
+  text-align: center;
+  background-image: linear-gradient(-180deg,	#FFD700 0%, white 100%);
+}
+
+#header .banner {
+  position: absolute;
+  top: 1.7rem;
+  left: 2rem;
+  text-align: left;
+}
+
+@media screen and (min-width: 960px) {
+  #header .banner {
+    position: absolute;
+    top: 2.7rem;
+    left: 4rem;
+  }
+}
+
+@media only screen and (max-device-width: 320px) {
+  #header .banner {
+    left: 1rem;
+  }
+}
+
+#header .banner span {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  font-family: colfax-web, sans-serif;
+  font-size: 1.4rem;
+  font-style: italic;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #591F7A;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+}
+
+#header nav {
+  text-align: right;
+  padding: 2rem 0;
+}
+
+@media screen and (min-width: 960px) {
+  #header nav {
+    padding: 3rem 2rem 0;
+  }
+}
+
+@media only screen and (max-device-width: 320px) {
+  #header nav {
+    margin-right: -1rem;
+  }
+}
+
+#header nav a {
+  padding: 0.5rem 1rem;
+  font-family: colfax-web, sans-serif;
+  font-size: 1.4rem;
+  font-style: italic;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #F71B81;
+  border: 1px solid #F71B81;
+  border-radius: 3px;
+}
+
+#header nav a:hover {
+  color: white;
+  background: #F71B81;
+  text-decoration: none;
+}
+
+#header .tagline {
+  color: #591F7A;
+  font-family: colfax-web, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  margin-top: -3rem;
+  margin-bottom: 5rem;
+}
+
+@media screen and (min-width: 960px) {
+  #header .tagline {
+    margin-top: -7rem;
+  }
+}
+
+#header .content,
+#header .intro {
+  margin: 0 auto 3rem auto;
+  max-width: 51rem;
+}
+
+#header .logo {
+  display: inline-block;
+  max-width: 67.5rem;
+}
+
+#header .intro {
+  color: #6C4782;
+  font-family: colfax-web, sans-serif;
+  font-size: 2rem;
+  line-height: 2.8rem;
+}
+
+#header .intro em {
+  font-weight: 500;
+}
+
+#header .caption {
+  font-size: 1.4rem;
+  line-height: 2rem;
+}
+
+#header .caption h4 {
+  margin-bottom: 0;
+}
+
+#header .buttons {
+  margin: 6rem 0;
+}
+
+@media screen and (min-width: 960px) {
+  #header .buttons {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+#header .buttons > div {
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  color: #6C4782;
+  font-family: colfax-web, sans-serif;
+  font-size: 1.4rem;
+  font-style: italic;
+  font-weight: 500;
+}
+
+#header .buttons > div .button {
+  margin-bottom: 1rem;
+  width: 30rem;
+}
+
+@media only screen and (max-device-width: 320px) {
+  #header .buttons > div .button {
+    width: 28rem;
+  }
+}
+
+#header .buttons > div:last-of-type {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 960px) {
+  #header .buttons > div {
+    margin: 0 1rem 0 0;
+  }
+
+  #header .buttons > div:last-of-type {
+    margin: 0 0 0 1rem;
+  }
+}
+
+#header .screenshots {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+#header .screenshots > div {
+  display: flex;
+  align-items: center;
+}
+
+#header .screenshots .code,
+#header .screenshots .dashboard {
+  box-shadow: 0 10px 20px 0 rgba(135, 113, 155, 0.5);
+  border-radius: 4px;
+}
+
+#header .screenshots .code {
+  margin-right: -2.5%;
+  margin-left: 2.5%;
+}
+
+#header .screenshots .pointer {
+  position: absolute;
+}
+
+#header .screenshots .pointer:nth-of-type(1) {
+  width: 36%;
+  top: 11.8%;
+  left: 34.3%;
+  transform: rotate(1.5deg);
+}
+
+#header .screenshots .pointer:nth-of-type(2) {
+  width: 48.5%;
+  top: 42.8%;
+  left: 21.8%;
+}
+
+#header .screenshots .pointer:nth-of-type(3) {
+  width: 39%;
+  top: 64.5%;
+  left: 31.2%;
+}
+
+#footer {
+  font-family: colfax-web, sans-serif;
+  font-size: 1.2rem;
+  line-height: 1em;
+  margin: 0 auto 6rem auto;
+  padding: 0 2rem;
+  max-width: 96rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 960px) {
+  #footer {
+    font-size: 1.4rem;
+    text-align: left;
+  }
+}
+
+#footer a {
+  font-style: italic;
+  font-weight: 500;
+  color: #F71B81;
+}
+
+#footer:before {
+  display: block;
+  content: '';
+  height: 0.7rem;
+  margin-bottom: 3rem;
+  background-image: linear-gradient(225deg, #9A45C3 0%, #EED3FB 100%);
+  border-radius: 10px;
+  opacity: 0.5;
+}
+
+@media screen and (min-width: 960px) {
+  #footer > div {
+    display: flex;
+  }
+
+  #footer > div div:first-child {
+    flex: 1;
+  }
+}
+
+#footer .logo {
+  display: block;
+  margin-bottom: 3rem;
+}
+
+#footer .logo img {
+  max-width: 8.8rem;
+}
+
+#footer .logo:hover {
+  opacity: 0.7;
+}
+
+#footer .menu {
+  display: inline-block;
+  margin-right: 3rem;
+}
+
+@media screen and (min-width: 960px) {
+  #footer .menu {
+    margin-right: 9rem;
+  }
+}
+
+#footer .menu:last-of-type {
+  margin-right: 0;
+}
+
+#footer .menu a {
+  display: block;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 960px) {
+  #hosting .features {
+    display: flex;
+  }
+}
+
+#hosting .features > div {
+  flex: 1;
+  padding: 3rem 2rem 2rem 2rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: #9013FE;
+  font-family: colfax-web, sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  font-weight: 500;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: -0.17px;
+  box-shadow: 0 2px 10px 0 rgba(135, 113, 155, 0.5);
+  border-radius: 10px;
+}
+
+@media screen and (min-width: 960px) {
+  #hosting .features > div {
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
+}
+
+#hosting .features > div img {
+  display: inline-block;
+  margin-bottom: 3rem;
+}
+
+#hosting .features > div:last-child {
+  margin: 0;
+}
+
+#ethos {
+  background: url(https://cdn.vapid.site/sites/d6e9a6a0-bb98-11e8-b35a-418c733d98df/images/bg_ethos-f6fd25db6406e119868586ef385ed363.png) center 7.6rem no-repeat #FBF7FE;
+  background-size: 40rem auto;
+  text-align: center;
+  padding-top: 6rem;
+}
+
+#ethos .concepts {
+  margin: 6rem 0;
+  font-size: 1.4rem;
+  line-height: 2rem;
+}
+
+#ethos .concepts h4 {
+  margin-bottom: 2rem;
+}
+
+#ethos .concepts a {
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+#ethos .concepts a:hover {
+  color: #38434f;
+}
+
+@media screen and (min-width: 960px) {
+  #ethos .concepts {
+    display: flex;
+  }
+}
+
+#ethos .concepts > div {
+  margin-bottom: 3rem;
+  padding: 3rem 2rem 1rem 2rem;
+  font-family: colfax-web, sans-serif;
+  background: white;
+  box-shadow: 0 2px 10px 0 rgba(135, 113, 155, 0.5);
+  border-radius: 10px;
+  text-align: left;
+}
+
+@media screen and (min-width: 960px) {
+  #ethos .concepts > div {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
+}
+
+#ethos .concepts > div:last-child {
+  margin-right: 0;
+}
+
+#ethos .concepts > div > div {
+  flex: 1;
+}
+
+#get-started a {
+  text-decoration: underline;
+  color: #38434f;
+}
+
+#get-started a:hover {
+  color: #0e1013;
+}
+
+#get-started .container {
+  background: url(https://cdn.vapid.site/sites/d6e9a6a0-bb98-11e8-b35a-418c733d98df/images/bg_get_started-3a2df48bcb356200e951cd095e089b79.png) center 4rem no-repeat;
+  background-size: 51rem auto;
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 960px) {
+  #get-started .container {
+    padding-top: 16rem;
+    padding-bottom: 16rem;
+    background-position: center 8rem;
+  }
+
+  #get-started .container > div {
+    flex: 1;
+    margin-right: 6rem;
+  }
+
+  #get-started .container > .content {
+    padding-left: 6rem;
+    margin-bottom: 6rem;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  #get-started .container {
+    display: flex;
+    background-position: left center;
+  }
+
+  #get-started .container > .content {
+    margin-bottom: 0;
+  }
+}
+
+#get-started h3 {
+  margin-bottom: 2rem;
+}
+
+#get-started .code {
+  position: relative;
+  margin-right: 0 !important;
+  padding: 2rem 1rem;
+  margin-right: 2rem;
+  font-family: colfax-web, sans-serif;
+  font-size: 1.4rem;
+  background: linear-gradient(90deg, #f8f8f8 0, #f8f8f8 3rem, white 3rem, white 100%);
+  box-shadow: 0 2px 10px 0 rgba(135, 113, 155, 0.5);
+  border-radius: 10px;
+  line-height: 1.8rem;
+}
+
+#get-started .code pre {
+  white-space: pre-wrap;
+}
+
+#get-started .code pre:before {
+  counter-reset: listing;
+}
+
+#get-started .code pre code {
+  counter-increment: listing;
+}
+
+#get-started .code pre code:before {
+  color: #DAD0D0;
+  content: counter(listing);
+  display: inline-block;
+  margin-right: 2.3rem;
+}
